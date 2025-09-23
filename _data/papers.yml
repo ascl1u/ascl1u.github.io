@@ -1,3 +1,13 @@
+- title: "PRIME-RL: Distributed RL Training at Scale"
+  authors:
+    - "Prime Intellect Team"
+  venue: "2025"
+  type: "Repo"
+  links:
+  - name: "GitHub"
+    url: "https://github.com/PrimeIntellect-ai/prime-rl"
+
+
 - title: "Verifiers: Environments for LLM Reinforcement Learning"
   authors:
     - "William Brown"
@@ -7,6 +17,32 @@
   - name: "GitHub"
     url: "https://github.com/PrimeIntellect-ai/verifiers"
 
+- title: "Full-Stack Fine-Tuning for the Q Programming Language"
+  authors:
+    - "Brendan R. Hogan"
+    - "William Brown"
+    - "Adel Boyarsky"
+    - "Anderson Schneider"
+    - "Yuriy Nevmyvaka"
+  venue: "2025"
+  type: "Technical Report"
+  links:
+  - name: "arXiv"
+    url: "https://arxiv.org/abs/2508.06813"
+
+- title: "Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Credit Assignment"
+  authors:
+    - "Siliang Zeng"
+    - "Quan Wei"
+    - "William Brown"
+    - "Oana Frunza"
+    - "Yuriy Nevmyvaka"
+    - "Mingyi Hong"
+  venue: "ICML Workshop on Computer Use Agents 2025"
+  type: "Workshop"
+  links:
+  - name: "arXiv"
+    url: "https://arxiv.org/abs/2505.11821"
 
 - title: "Online Stackelberg Optimization via Nonlinear Control"
   authors:
