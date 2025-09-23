@@ -44,6 +44,21 @@
   - name: "arXiv"
     url: "https://arxiv.org/abs/2505.11821"
 
+- title: "Clustering and Entity Matching via Language Model Community Detection"
+  authors:
+    - "William Brown"
+    - "Alexander Sabat"
+    - "Adel Boyarsky"
+    - "Rachel Cayale"
+    - "Daniel DeDora"
+    - "Yuriy Nevmyvaka"
+    - "Nicholas Venuti"
+  venue: "2024"
+  type: "Technical Report"
+  links:
+  - name: "pdf"
+    url: "/assets/pdfs/lmcd.pdf"
+
 - title: "Online Stackelberg Optimization via Nonlinear Control"
   authors:
     - "William Brown"
