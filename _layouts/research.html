@@ -16,7 +16,7 @@ layout: default
     paper.note %}<strong class="text-red-600">({{ paper.note }})</strong>{% endif %}</p>
   <p class="mb-1">
     {% for author in paper.authors %}
-    {% if author == "William Brown" %}
+    {% if author == "Andy Liu" %}
     <strong>{{ author }}</strong>{% unless forloop.last %},{% endunless %}
     {% else %}
     {{ author }}{% unless forloop.last %},{% endunless %}
