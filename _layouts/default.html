@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - Will Brown</title>
+    <title>{{ page.title }} - Andy Liu</title>
     <link href="{{ '/assets/css/main.css' | relative_url}}" rel="stylesheet">
     <link href="{{ '/assets/css/syntax.css' | relative_url }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -11,38 +12,41 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.google_analytics }}');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
     </script>
     {% endif %}
 </head>
+
 <body class="bg-stone-100 text-gray-900 font-mono min-h-screen flex flex-col">
-  <header class="bg-stone-200 shadow-sm">
-      <div class="max-w-4xl mx-auto px-4 py-6">
-          <h1 class="text-3xl">Will Brown</h1>
-          <nav class="mt-4">
-              <ul class="flex space-x-6">
-                  <li><a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a></li>
-                  <li><a href="/research" class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a></li>
-                  <li><a href="/blog" class="text-gray-600 hover:text-blue-600 transition duration-300">Blog</a></li>
-              </ul>
-          </nav>
-      </div>
-  </header>
-  
-  <main class="max-w-4xl mx-auto px-4 py-8 flex-grow">
-      {{ content }}
-  </main>
-  
-  <footer class="bg-stone-200 mt-12 py-8">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-          <div class="flex justify-center space-x-6 mb-4">
-              {% include social-icons.html %}
-          </div>
-          <p class="text-gray-600">&copy; {{ 'now' | date: "%Y" }} Will Brown. All rights reserved.</p>
-      </div>
-  </footer>
+    <header class="bg-stone-200 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <h1 class="text-3xl">Andy Liu</h1>
+            <nav class="mt-4">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a></li>
+                    <li><a href="/research"
+                            class="text-gray-600 hover:text-blue-600 transition duration-300">Research</a></li>
+                    <li><a href="/blog" class="text-gray-600 hover:text-blue-600 transition duration-300">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow">
+        {{ content }}
+    </main>
+
+    <footer class="bg-stone-200 mt-12 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                {% include social-icons.html %}
+            </div>
+            <p class="text-gray-600">&copy; {{ 'now' | date: "%Y" }} Andy Liu. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
