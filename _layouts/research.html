@@ -3,7 +3,7 @@ layout: default
 ---
 {{ content }}
 {% for paper in site.data.papers %}
-<div class="paper-item mb-6 pb-6 border-b border-gray-200 last:border-b-0">
+<div class="paper-item mb-6 pb-6 border-b border-gray-200 last:border-b-0 text-left">
   <h2 class="text-lg font-semibold mb-1">{{ paper.title }}</h2>
   <p class="text-md text-gray-600 mb-1">{{ paper.type }} {% if paper.venue %}| {{ paper.venue }} {% endif %}{% if
     paper.note %}<strong class="text-red-600">({{ paper.note }})</strong>{% endif %}</p>

@@ -4,7 +4,7 @@ layout: default
 {{ content }}
 {% if page.is_blog_index %}
 {% for post in site.posts %}
-<article class="mb-12 pb-8 border-b border-gray-200 last:border-b-0">
+<article class="mb-12 pb-8 border-b border-gray-200 last:border-b-0 text-left">
   <h2 class="text-lg font-semibold mb-2">
     <a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800 transition duration-300">{{ post.title }}</a>
   </h2>
