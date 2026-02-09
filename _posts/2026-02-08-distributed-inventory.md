@@ -3,6 +3,7 @@ layout: post
 title: "Probing Long-Horizon Reasoning: Active Context via RL"
 date: 2026-02-08
 description: "Investigating brittleness in LLMs through active context management with Distributed-Inventory."
+image: /assets/images/distributed_inventory/d.png
 ---
 
 ## Introduction
