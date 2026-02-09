@@ -1,6 +1,6 @@
 ---
 layout: blog
 title: Blog
-description: Thoughts, musings, works-in-progress, info-dumps.
+description: Keeping track of my work
 is_blog_index: true
 ---

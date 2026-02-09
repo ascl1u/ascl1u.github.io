@@ -71,4 +71,4 @@ In experiment D, the exploration space explodes. The flatline suggests the model
 
 To stabilize long-horizon reasoning, I plan to scale up the training configuration: larger batch sizes, more rollouts per example, and increasingly complex chunk sequences.
 
-Distributed-Inventory is available on the Prime Intellect Environments Hub (https://app.primeintellect.ai/dashboard/environments/ascl1u/distributed-inventory) for further exploration. Special thanks to Prime Intellect, as this would not have been possible without their hosted RL beta.
+[Distributed-Inventory](https://app.primeintellect.ai/dashboard/environments/ascl1u/distributed-inventory) is available on the Prime Intellect Environments Hub for further exploration. Special thanks to Prime Intellect, as this would not have been possible without their hosted RL beta.
