@@ -11,15 +11,15 @@ Current frontier LLMs think to output their best response, maximizing the utilit
 
 I am investigating this brittleness through a specific lens: **active context management**.
 
-`Distributed-Inventory` is an RL environment designed to isolate an LLM's ability to maintain a coherent state over long horizons *without* relying on massive context windows. By stripping away the history, we force the model to transition from a passive reader to an active state manager.
+`Distributed-Inventory` is an RL environment designed to isolate an LLM's ability to maintain a coherent state over long horizons *without* relying on massive context windows. By stripping away the history, the model is forced to transition from a passive reader to an active state manager.
 
 ## Environment Design
 
-Adhering to the *Bitter Lesson*, we do not hand-engineer a memory retrieval system. Instead, we use RL to force the model to discover its own general-purpose state compression policy.
+Adhering to the *Bitter Lesson*, instead of hand-engineering a memory retrieval system, I used RL to force the model to discover its own general-purpose state compression policy.
 
 The environment is built using the `verifiers` library and trained using `prime-rl`. A `NoiseGenerator` deterministically produces an entropic stream of words using a common noun vocabulary. Buried within this stream are commands `[GET]` and `[DROP]` which operate on a distinct fantasy item vocabulary.
 
-The critical innovation is the **strict memory wipe**. Unlike a standard loop where the model attends to the full history, we override the conversation context such that at any turn, the model only sees:
+The critical part is the **strict memory wipe**. Unlike a standard loop where the model attends to the full history, the conversation context is overriden such that at any turn, the model only sees:
 
 1. The system prompt.
 2. Its own *previous* output.
@@ -37,7 +37,7 @@ To survive, the model must explicitly carry the inventory state forward in its o
             "Survive the stream and report the final inventory when asked."
 ```
 
-We use **sparse binary rewards**, awarded only at the final step. This forces the model to treat intermediate state maintenance not as an auxiliary task, but as a latent variable required to solve the objective.
+By using **sparse binary rewards**, awarded only at the final step, the model is forced to treat intermediate state maintenance not as an auxiliary task, but as a latent variable required to solve the objective.
 
 ## Results
 
@@ -61,7 +61,7 @@ The constraints reveal that active context management is fundamentally an explor
 
 ### 1. The Gradient Noise Regime
 
-In **Experiment A**, the model learns quickly, but the reward curve remains highly oscillatory. This variance is a direct artifact of our small batch size. While the model *can* maintain state, the gradient updates are noisy, preventing the policy from settling into a stable formatting minimum. This proves the signal is strong enough to recover from bad updates, but optimization is volatile.
+In **Experiment A**, the model learns quickly, but the reward curve remains highly oscillatory. This variance is a direct artifact of the small batch size. While the model *can* maintain state, the gradient updates are noisy, preventing the policy from settling into a stable formatting minimum. This proves the signal is strong enough to recover from bad updates, but optimization is volatile.
 
 ### 2. The Exploration Bottleneck (Grokking)
 
