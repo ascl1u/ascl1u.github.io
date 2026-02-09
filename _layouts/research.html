@@ -1,26 +1,28 @@
 ---
 layout: default
 ---
-{{ content }}
-{% for paper in site.data.papers %}
-<div class="paper-item mb-6 pb-6 border-b border-gray-200 last:border-b-0 text-left">
-  <h2 class="text-lg font-semibold mb-1">{{ paper.title }}</h2>
-  <p class="text-md text-gray-600 mb-1">{{ paper.type }} {% if paper.venue %}| {{ paper.venue }} {% endif %}{% if
-    paper.note %}<strong class="text-red-600">({{ paper.note }})</strong>{% endif %}</p>
-  <p class="mb-1">
-    {% for author in paper.authors %}
-    {% if author == "Andy Liu" %}
-    <strong>{{ author }}</strong>{% unless forloop.last %},{% endunless %}
-    {% else %}
-    {{ author }}{% unless forloop.last %},{% endunless %}
-    {% endif %}
-    {% endfor %}
-  </p>
-  <div class="links">
-    {% for link in paper.links %}
-    <a href="{{ link.url }}" class="mb-1 text-blue-600 hover:text-blue-800 transition duration-300">[{{ link.name
-      }}]</a>
-    {% endfor %}
+<div class="w-full">
+  {{ content }}
+  {% for paper in site.data.papers %}
+  <div class="paper-item mb-6 pb-6 border-b border-gray-200 last:border-b-0">
+    <h2 class="text-lg font-semibold mb-1">{{ paper.title }}</h2>
+    <p class="text-md text-gray-600 mb-1">{{ paper.type }} {% if paper.venue %}| {{ paper.venue }} {% endif %}{% if
+      paper.note %}<strong class="text-red-600">({{ paper.note }})</strong>{% endif %}</p>
+    <p class="mb-1">
+      {% for author in paper.authors %}
+      {% if author == "Andy Liu" %}
+      <strong>{{ author }}</strong>{% unless forloop.last %},{% endunless %}
+      {% else %}
+      {{ author }}{% unless forloop.last %},{% endunless %}
+      {% endif %}
+      {% endfor %}
+    </p>
+    <div class="links">
+      {% for link in paper.links %}
+      <a href="{{ link.url }}" class="mb-1 text-blue-600 hover:text-blue-800 transition duration-300">[{{ link.name
+        }}]</a>
+      {% endfor %}
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
