@@ -5,7 +5,11 @@ date: 2026-02-27
 description: "Is the gold standard of LLM evaluation just a style test? An analysis of 140k human preference battles."
 ---
 
-Current evaluation benchmarks are notoriously saturated and contaminated. So much so that Karpathy says: "I pretty much only trust two LLM evals right now: Chatbot Arena and r/LocalLlama comments section." But, what if Chatbot Arena has issues as well?
+Current evaluation benchmarks are notoriously saturated and contaminated. So much so that Karpathy says:
+
+![Karpathy Tweet](/assets/images/chatbot_arena_analysis/karpathy.png)
+
+But, what if Chatbot Arena has issues as well?
 
 I built an analysis pipeline to decompose 140k human preference battles from Chatbot Arena using logistic regression to find out why models win, and SVD to see how many dimensions human preference actually has. A simple question crept into my mind: is the gold standard of LLM evaluation just a style test?
 
@@ -22,13 +26,13 @@ For every single battle, I computed the difference between the winner and the lo
 - **Formatting:** markdown headers, bold text, bullet points, code blocks, numbered lists, paragraph count
 - **Tone:** sycophancy score, hedging score
 
-Then I threw it all into a regularized Logistic Regression model. Could I predict who won *without looking at the actual text meaning*, just the style shapes?
+Then I threw it all into a regularized logistic regression model. Could I predict who won *without looking at the actual text meaning*, just the style shapes?
 
-It kind of does! Across all 98,000 valid battles, style features alone predict the winner with an AUC of 0.656 (McFadden R² = 0.044). That AUC means: pick a random win and a random loss, and the style-only model ranks the winner higher 65.6% of the time. Not overwhelming, but far from chance, and remember, this model has *zero* access to what the text actually says.
+Sort of! Across all 98,000 valid battles, style features alone predict the winner with an AUC of 0.656 (McFadden R² = 0.044). That AUC means: pick a random win and a random loss, and the style-only model ranks the winner higher 65.6% of the time. Not overwhelming, but far from chance, and remember, this model has *zero* access to what the text actually says.
 
 To be honest about what that R² means: ~96% of the variance in human preference is *not* explained by these style features. Quality clearly matters. But the fact that surface-level formatting alone gets you to 0.656 AUC is still striking.
 
-Word count is the biggest predictor by far, followed by bold text and paragraph structure. Some features push in surprising directions — bullet count has a slightly *negative* coefficient, meaning more bullets marginally hurts win probability in the aggregate. And sycophancy score? Statistically insignificant (p = 0.72). Despite all the community discourse around sycophantic models, flattery doesn't predict Arena wins.
+Word count is the biggest predictor by far, followed by bold text and paragraph structure. Some features push in surprising directions. Bullet count has a slightly *negative* coefficient, meaning more bullets marginally hurts win probability in the aggregate. And sycophancy score? Statistically insignificant (p = 0.72). Despite all the community discourse around sycophantic models, flattery doesn't predict Arena wins.
 
 **Track 2: The Macro (Decomposition) View**
 I built a matrix of (prompt cluster × model) win rates: 52 models across 4 prompt categories.
