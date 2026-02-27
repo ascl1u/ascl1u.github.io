@@ -52,7 +52,7 @@ But wait, there's an obvious counterargument.
 
 ## The Quality Confound
 "Of course longer answers win," you might say. "Better models write more detailed answers. Style is just a confound for quality!"
-This was my biggest skepticism too. If GPT-4 is both smarter AND wordier than a 7B model, then word count will artificially look like it's driving the win, when really it's the intelligence. The same logic undermines Track 2: if better models produce stylistically distinct text, then the PC-feature correlations might just be capturing quality, not style per se.
+This was my biggest reservation too. If GPT-4 is both smarter AND wordier than a 7B model, then word count will artificially look like it's driving the win, when really it's the intelligence. The same logic undermines Track 2: if better models produce stylistically distinct text, then the PC-feature correlations might just be capturing quality, not style per se.
 
 So I ran one more experiment: **Close Matchup Dynamics**.
 I stratified the battles by the *strength gap* between the two competing models, using each model's overall win rate in the dataset as a proxy for strength. I looked at "mismatch" battles (large win-rate gaps, like a frontier model vs a 7B) and "close" battles (models within 5 percentage points of each other).
@@ -75,7 +75,9 @@ What happens to the style AUC? It drops... but only to 0.585.
 
 ## So What Now?
 
-To be clear: this doesn't mean Chatbot Arena is broken. Model quality still matters. In the aggregate, knowing which model you're looking at is more predictive than knowing its style. But style is the tiebreaker, and in an era where frontier models are increasingly close in capability, that tiebreaker matters more and more.
+Let's be clear about what this means. If you put a tiny 7B model up against a frontier model, the smarter model will win. Capabilility is the barrier to entry. But at the cutting edge, top models are becoming functionally indistinguishable in baseline strength. They are all locked in "close matchups."
+
+And when the models are evenly matched, formatting decides the winner. Chatbot Arena might have started as a pure intelligence test, but at the top of the leaderboard, it has become a beauty pageant.
 
 A few caveats worth keeping in mind: this analysis covers 11 hand-picked text features, and different feature choices could tell a different story. The dataset reflects Arena's user base, which skews tech-savvy and English-speaking. We can see that formatting predicts wins, but we can't say voters are *consciously* choosing based on bullet points. It's likely a more subtle perceptual effect.
 
